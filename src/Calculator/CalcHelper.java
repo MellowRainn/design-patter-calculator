@@ -14,12 +14,14 @@ public class CalcHelper {
     String parts[] = statement.split(" ");
 
     if (parts.length != 3) {
+      System.out.println("Checking for the length of the equation");
       throw new InvalidStatementException("Incorrect number of fields", statement);
     }
 
     String commandString = parts[0];
 
     try {
+      System.out.println("Parsing Double");
       value1 = Double.parseDouble(parts[1]);
       value2 = Double.parseDouble(parts[2]);
     } catch (NumberFormatException e) {
@@ -33,6 +35,7 @@ public class CalcHelper {
 
     CalcBase calculator = createCalculator();
     calculator.calculate();
+    System.out.println("Getting result");
     result = calculator.getResult();
   }
 
@@ -48,18 +51,23 @@ public class CalcHelper {
     CalcBase calculator = null;
     switch (operation) {
       case ADDITION:
+        System.out.println("Adding");
         calculator = new CalcAdder(value1, value2);
         break;
       case SUBTRACTION:
+        System.out.println("Subtracting");
         calculator = new CalcSubtracter(value1, value2);
         break;
       case MULTIPLICATION:
+        System.out.println("Multiplying");
         calculator = new CalcMultiplier(value1, value2);
         break;
       case DIVISION:
+        System.out.println("Dividing");
         calculator = new CalcDivider(value1, value2);
         break;
     }
+    System.out.println("Getting calculation");
     return calculator;
   }
 
