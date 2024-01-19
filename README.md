@@ -20,8 +20,6 @@ This project was developed in collaboration between [MellowRainn] and [Tygovande
 
 1. **Template Method**: The Template Method pattern is used in the [`CalcBase`](src/Calculator/CalcBase.java) class. This class defines the structure of the `calculate` method, which must be implemented by any class that extends `CalcBase`. The classes [`CalcAdder`](src/Calculator/CalcAdder.java), [`CalcSubtracter`](src/Calculator/CalcSubtracter.java), [`CalcMultiplier`](src/Calculator/CalcMultiplier.java), and [`CalcDivider`](src/Calculator/CalcDivider.java) all provide their own implementations of this method. This pattern allows subclasses to redefine certain steps of an algorithm without changing the algorithm's structure.
 
-2. **Decorator**: 
-
 ### Behavioural Design Patterns
 
 1. **Command**: The Command pattern is used in the [`CalcBase`](src/Calculator/CalcBase.java) class and its subclasses ([`CalcAdder`](src/Calculator/CalcAdder.java), [`CalcSubtracter`](src/Calculator/CalcSubtracter.java), [`CalcMultiplier`](src/Calculator/CalcMultiplier.java), [`CalcDivider`](src/Calculator/CalcDivider.java)). Each subclass represents a specific command (addition, subtraction, multiplication, division) that can be performed on two numbers. The `calculate` method in `CalcBase` is the method that executes the command. This pattern allows you to encapsulate a request as an object, thereby letting you parameterize clients with queues, requests, or operations.
