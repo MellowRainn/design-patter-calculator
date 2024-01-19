@@ -1,5 +1,4 @@
 package Calculator;
-import java.util.Scanner;
 
 public class CalcHelper {
     private static final String SEPARATOR = " ";

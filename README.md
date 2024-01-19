@@ -1,6 +1,7 @@
 # Calculator
 
-This is a Java console calculator hosted on GitHub. The entire codebase is available as a zip file in the repository.
+This Java console calculator allows you to perform basic arithmetic operations such as addition (+), subtraction (-), multiplication (*), and division (/) between two numbers. 
+To use the calculator, you need to input a statement in the format: `operation number1 number2`. For example, to add 5 and 3, you would input `+ 5 3`. The calculator will then perform the operation and output the result.
 
 ## Team Members
 This project was a collaborative effort that involved pair programming and online collaboration.
