@@ -12,11 +12,31 @@ public class Main {
 
     //  allows you to read inputs in the console.
     ConsoleReader reader = new ConsoleReader();
+
     writer.writeLine("Fill in any equation");
+
     String equations[] = {
             reader.readLine()
     };
+
+//    examples:
+//    ADDITION
+//    SUBTRACTION
+//    MULTIPLICATION
+//    DIVISION
+
+    CalcHelper helper = new CalcHelper();
+    for (
+            String statements : equations) {
+      try {
+        helper.process(statements);
+        System.out.println(helper);
+      } catch (InvalidStatementException e) {
+        System.out.println(e.getMessage());
+        if (e.getCause() != null) {
+          System.out.println("Original Exception: " + e.getCause().getMessage());
+        }
+      }
+    }
   }
-
-
 }
