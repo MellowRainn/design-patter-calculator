@@ -20,7 +20,7 @@ This project was developed in collaboration between [MellowRainn] and [Tygovande
 
 1. **Template Method**: The Template Method pattern is used in the [`CalcBase`](src/Calculator/CalcBase.java) class. This class defines the structure of the `calculate` method, which must be implemented by any class that extends `CalcBase`. The classes [`CalcAdder`](src/Calculator/CalcAdder.java), [`CalcSubtracter`](src/Calculator/CalcSubtracter.java), [`CalcMultiplier`](src/Calculator/CalcMultiplier.java), and [`CalcDivider`](src/Calculator/CalcDivider.java) all provide their own implementations of this method. This pattern allows subclasses to redefine certain steps of an algorithm without changing the algorithm's structure.
 
-2. **Decorator**: (Replace this with the actual explanation and code reference)
+2. **Decorator**: 
 
 ### Behavioural Design Patterns
 
