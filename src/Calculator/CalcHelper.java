@@ -1,17 +1,21 @@
 package Calculator;
+import java.util.Scanner;
 
 public class CalcHelper {
+    private static final String SEPARATOR = " ";
+    private double value1;
+    private double value2;
+    private double result;
+    private CalcBase compositeCalculator;
 
-  private static final char ADD_SYMBOL = '+';
-  private static final char MINUS_SYMBOL = '-';
-  private static final char MULTIPLY_SYMBOL = '*';
-  private static final char DIVIDE_SYMBOL = '/';
+    public void process(String statement) throws InvalidStatementException {
+        String[] parts = statement.split(SEPARATOR);
 
-  private OpCode operation;
-  private double value1, value2, result;
+        if (parts.length != 3) {
+            throw new InvalidStatementException("Incorrect number of fields", statement);
+        }
 
-  public void process(String statement) throws InvalidStatementException {
-    String parts[] = statement.split(" ");
+        String opCodeStr = parts[0];
 
     if (parts.length != 3) {
       System.out.println("Checking for the length of the equation");
@@ -28,9 +32,10 @@ public class CalcHelper {
       throw new InvalidStatementException("Non-numeric data", statement, e);
     }
 
-    setCommandFromString(commandString);
-    if (operation == null) {
-      throw new InvalidStatementException("Invalid command", statement);
+    @Override
+    public String toString() {
+        char opCode = compositeCalculator.getOpCode();
+        return String.format("%.2f %c %.2f = %.2f", value1, opCode, value2, result);
     }
 
     CalcBase calculator = createCalculator();
