@@ -54,7 +54,7 @@ public class CalcHelper {
         calculator = new CalcSubtracter(value1, value2);
         break;
       case MULTIPLICATION:
-        calculator = new CalcSubtracter(value1, value2);
+        calculator = new CalcMultiplier(value1, value2);
         break;
       case DIVISION:
         calculator = new CalcDivider(value1, value2);

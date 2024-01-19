@@ -39,10 +39,6 @@ public abstract class CalcBase {
     this.result = result;
   }
 
-  public CalcBase() {
-  }
-
-  ;
 
   public CalcBase(double value1, double value2) {
     this.value1 = value1;
